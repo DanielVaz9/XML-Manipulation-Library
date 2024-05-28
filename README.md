@@ -35,6 +35,9 @@ xmlDocument.addEntity(entity)
 ### Renaming Entities
 `xmlDocument.renameEntities("fuc", "disciplina")`
 
+### Renaming child Entities
+`entity.renameChild("nome", "name") `
+
 ### Renaming Attributes
 `xmlDocument.renameAttributes("fuc", "codigo", "id")`
 
