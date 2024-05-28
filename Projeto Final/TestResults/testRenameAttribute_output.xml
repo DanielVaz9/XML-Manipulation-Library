@@ -1,0 +1,11 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<root>
+    <fuc id="M4310">
+        <nome>Programação Avançada</nome>
+        <ects>6.0</ects>
+        <avaliacao>
+            <componente peso="80%" name="Projeto"/>
+            <componente peso="20%" name="Quizzs"/>
+        </avaliacao>
+    </fuc>
+</root>
