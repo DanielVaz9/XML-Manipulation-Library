@@ -49,7 +49,7 @@ println(result)
 
 ## Annotations
 
-### Adding a Percentage Sign to Attribute Values
+### Adding a percentage sign to Attribute values
 ```
 class AddPercentage : StringTransformer {
     override fun transform(value: String): String = "$value%"
@@ -65,7 +65,7 @@ val c1 = ComponenteAvaliacao("Quizzes", 20)
 val xmlEntity = createXMLEntityFromClass(c1)
 ```
 
-### Excluding Fields from XML
+### Excluding fields from XML
 ```
 @XmlElement("fuc")
 data class FUC(
