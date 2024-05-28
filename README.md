@@ -1,4 +1,4 @@
-# XML-Manipulation-Library
+# XML Manipulation Library
 This project is a Kotlin-based library designed to manipulate XML files. 
 The library allows for adding, removing, renaming, and transforming XML entities and attributes. Additionally, it supports annotations for XML entity conversion and transformation.
 
