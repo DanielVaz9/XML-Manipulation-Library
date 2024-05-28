@@ -14,7 +14,7 @@ The library allows for adding, removing, renaming, and transforming XML entities
 
 ## How to use
 
-###Creating an XML Document
+### Creating an XML Document
 val xmlDocument = XMLDocument("root")
 
 ### Creating an XML File
