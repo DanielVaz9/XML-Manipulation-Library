@@ -15,38 +15,42 @@ The library allows for adding, removing, renaming, and transforming XML entities
 ## How to use
 
 ### Creating an XML Document
-val xmlDocument = XMLDocument("root")
+`val xmlDocument = XMLDocument("root")`
 
 ### Creating an XML File
-xmlDocument.createXMLFile("Xml", "output.xml")
+`xmlDocument.createXMLFile("Xml", "output.xml")`
 
 ### Adding Entities/Attributes
+```
 val entity = XMLEntity("fuc", "")
 entity.addAttribute("codigo", "M4310")
 entity.addChild(XMLEntity("nome", "Programação Avançada"))
 entity.addChild(XMLEntity("ects", "6.0"))
-
 xmlDocument.addEntity(entity)
+```
 
 ### Removing Entities
-xmlDocument.removeEntities("nome")
+`xmlDocument.removeEntities("nome")`
 
 ### Renaming Entities
-xmlDocument.renameEntities("fuc", "disciplina")
+`xmlDocument.renameEntities("fuc", "disciplina")`
 
 ### Renaming Attributes
-xmlDocument.renameAttributes("fuc", "codigo", "id")
+`xmlDocument.renameAttributes("fuc", "codigo", "id")`
 
 ### Removing Attributes
-xmlDocument.removeAttributes("fuc", "codigo")
+`xmlDocument.removeAttributes("fuc", "codigo")`
 
 ### XPath Query
+```
 val result = xmlDocument.checkXPath("fuc/avaliacao/componente")
 println(result)
+```
 
 ## Annotations
 
 ### Adding a Percentage Sign to Attribute Values
+```
 class AddPercentage : StringTransformer {
     override fun transform(value: String): String = "$value%"
 }
@@ -59,8 +63,10 @@ data class ComponenteAvaliacao(
 
 val c1 = ComponenteAvaliacao("Quizzes", 20)
 val xmlEntity = createXMLEntityFromClass(c1)
+```
 
 ### Excluding Fields from XML
+```
 @XmlElement("fuc")
 data class FUC(
     @XmlAttribute val codigo: String,
@@ -70,8 +76,10 @@ data class FUC(
 )
 val f = FUC("M4310", "Programação Avançada", 6.0, "xxxx")
 val xmlEntity = createXMLEntityFromClass(f)
+```
 
 ### Adapting Entities
+```
 class FUCAdapter : XMLAdapterinter {
     override fun adapt(entity: XMLEntity): XMLEntity {
         entity.removeChildByName("ects")
@@ -89,4 +97,4 @@ data class FUC(
 )
 val f = FUC("M4310", "Programação Avançada", 6.0, "xxxx")
 val xmlEntity = createXMLEntityFromClass(f)
-
+```
